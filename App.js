@@ -1,24 +1,24 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View,Alert } from 'react-native';
  
-//tudo que vai aparecer na tela É DENTRO DO VIEW
-//tudo que é função ou lógica é FORA da function principal sendo iniciada pelo const;
+
+
 export default function App() {
-  const [UserInput, setInputUser] = useState('');//estamos definindo o estado inicial do Userinput e o estado da função
-  const clicou = () =>{//função so pode ser criada fora da function principaç(return());
-    Alert.alert('Mensagem do user', UserInput || 'Nenhuma mensagem digitada'); //aqui estamos mostrando a mensagem do usuario e caso nao tenha nenhuma mensagem digitada vai mostrar a mensagem ao lado 
+  const [UserInput, setInputUser] = useState('');
+  const clicou = () =>{
+    Alert.alert('Mensagem do user', UserInput || 'Nenhuma mensagem digitada'); 
   }
   return (
     
     <View style={styles.container}>
       <TextInput
-      style = {styles.botao}//para estilizar
+      style = {styles.botao}
       value = {UserInput}
-      onChangeText={setUserinput} //a função setada dentro vai mudar o estado do texto atual
+      onChangeText={setUserinput} 
       />
       <TouchableOpacity OnPress = {() => {Alert.alert('TEXTO CLICADO')}}>
         <Text style = {styles.texto}>TESTE</Text> 
-      { /*Sempre criar os elementos dentro do view para aparecer na tela*/ }
+
       </TouchableOpacity>
     </View>
     
